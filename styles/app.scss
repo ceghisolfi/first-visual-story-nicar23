@@ -1,6 +1,7 @@
 // RESET
 // Smooths out the rough edges across browsers
 @use './tools/normalize';
+@use 'node_modules/leaflet/dist/leaflet';
 
 // VARIABLES
 // Reusable settings
@@ -70,5 +71,23 @@ p {
     text-align: left;
     background-color: colors.$black;
     color: white;
+  }
+}
+
+.graphics-container {
+  display: flex;
+  justify-content: space-between;
+  @media (max-width: 500px) {
+    display: block;
+  }
+  .graphic {
+    flex: 0 1 48%;
+    @media (max-width: 500px) {
+      display: block;
+      margin-bottom: 15px;
+    }
+    iframe {
+      min-height: 360px;
+    }
   }
 }
